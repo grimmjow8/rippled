@@ -54,8 +54,8 @@ costs, and ultimately, offer more competitive FX pricing.
 protocol. To learn more about how to build and run a `rippled`
 server, visit https://ripple.com/build/rippled-setup/
 
-[![travis-ci.org: Build Status](https://travis-ci.org/ripple/rippled.png?branch=develop)](https://travis-ci.org/ripple/rippled)
-[![codecov.io: Code Coverage](https://codecov.io/gh/ripple/rippled/branch/develop/graph/badge.svg)](https://codecov.io/gh/ripple/rippled)
+[![travis-ci.org: Build Status](https://travis-ci.org/grimmjow8/rippled.png?branch=develop)](https://travis-ci.org/grimmjow8/rippled)
+[![codecov.io: Code Coverage](https://codecov.io/gh/grimmjow8/rippled/branch/develop/graph/badge.svg)](https://codecov.io/gh/grimmjow8/rippled)
 
 ### License
 `rippled` is open source and permissively licensed under the

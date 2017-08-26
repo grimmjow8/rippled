@@ -76,8 +76,5 @@ script:
 notifications:
   email:
     false
-  irc:
-    channels:
-      - "chat.freenode.net#ripple-dev"
 
 dist: precise
