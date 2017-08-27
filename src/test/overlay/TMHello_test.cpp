@@ -21,6 +21,8 @@
 #include <beast/http/dynamic_body.hpp>
 #include <ripple/overlay/impl/TMHello.h>
 #include <ripple/beast/unit_test.h>
+#include <ripple/protocol/PublicKey.h>
+#include <ripple/protocol/SecretKey.h>
 
 namespace ripple {
 
