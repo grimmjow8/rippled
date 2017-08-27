@@ -62,8 +62,61 @@ public:
     void
     test_appendHello()
     {
-        request_type h;
-        protocol::TMHello src;
+        beast::http::request<beast::http::empty_body> h;
+        protocol::TMHello hello;
+
+        // TODO initialize to some val
+        PublicKey pk;
+        SecretKey sk;
+        uint256 shared = 0;
+
+        auto const sig = signDigest (pk, sk, shared);
+        hello.set_nodepublic (
+            toBase58 (
+                TokenType::TOKEN_NODE_PUBLIC,
+                pk));
+        hello.set_nodeproof (sig.data(), sig.size());
+        BEAST_EXPECT(1);
+
+
+    // h.set_protoversion (to_packed (BuildInfo::getCurrentProtocol()));
+    // h.set_protoversionmin (to_packed (BuildInfo::getMinimumProtocol()));
+    // h.set_fullversion (BuildInfo::getFullVersionString ());
+    // h.set_nettime (app.timeKeeper().now().time_since_epoch().count());
+
+
+    // h.set_ipv4port (portNumber); // ignored now
+    // h.set_testnet (false);
+
+    // if (remote.is_v4())
+    // {
+    //     auto addr = remote.to_v4 ();
+    //     if (is_public (addr))
+    //     {
+    //         // Connection is to a public IP
+    //         h.set_remote_ip (addr.value);
+    //         if (public_ip != beast::IP::Address())
+    //             h.set_local_ip (public_ip.to_v4().value);
+    //     }
+    // }
+
+    // // We always advertise ourselves as private in the HELLO message. This
+    // // suppresses the old peer advertising code and allows PeerFinder to
+    // // take over the functionality.
+    // h.set_nodeprivate (true);
+
+    // auto const closedLedger = app.getLedgerMaster().getClosedLedger();
+
+    // assert(! closedLedger->open());
+    // // VFALCO There should ALWAYS be a closed ledger
+    // if (closedLedger)
+    // {
+    //     uint256 hash = closedLedger->info().hash;
+    //     h.set_ledgerclosed (hash.begin (), hash.size ());
+    //     hash = closedLedger->info().parentHash;
+    //     h.set_ledgerprevious (hash.begin (), hash.size ());
+    // }
+
 
 
 
