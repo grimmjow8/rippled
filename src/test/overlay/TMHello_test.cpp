@@ -60,9 +60,20 @@ public:
     }
 
     void
+    test_appendHello()
+    {
+        request_type h;
+        protocol::TMHello src;
+
+
+
+    }
+
+    void
     run()
     {
         test_protocolVersions();
+        test_appendHello();
     }
 };
 
