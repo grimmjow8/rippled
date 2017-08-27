@@ -26,6 +26,11 @@ namespace ripple {
 class TMHello_test : public beast::unit_test::suite
 {
 private:
+    using request_type =
+        beast::http::request<beast::http::empty_body>;
+    request_type h;
+
+
     template <class FwdIt>
     static
     std::string
@@ -62,7 +67,7 @@ public:
     void
     test_appendHello()
     {
-        beast::http::request<beast::http::empty_body> h;
+        // beast::http::request<beast::http::empty_body> h;
         protocol::TMHello hello;
 
         // TODO initialize to some val
