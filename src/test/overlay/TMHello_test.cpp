@@ -18,6 +18,7 @@
 //==============================================================================
 
 #include <BeastConfig.h>
+#include <beast/http/dynamic_body.hpp>
 #include <ripple/overlay/impl/TMHello.h>
 #include <ripple/beast/unit_test.h>
 
