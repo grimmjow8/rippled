@@ -78,7 +78,7 @@ public:
         // TODO initialize to some val
         PublicKey pk;
         SecretKey sk;
-        uint256 shared = 0;
+        uint256 shared = beast::zero;
 
         auto const sig = signDigest (pk, sk, shared);
         hello.set_nodepublic (
