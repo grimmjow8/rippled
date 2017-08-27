@@ -27,7 +27,8 @@ class TMHello_test : public beast::unit_test::suite
 {
 private:
     using request_type =
-        beast::http::request<beast::http::empty_body>;
+        //beast::http::request<beast::http::empty_body>;
+        beast::http::response<beast::http::dynamic_body>;
     request_type h;
 
 
@@ -68,6 +69,7 @@ public:
     test_appendHello()
     {
         // beast::http::request<beast::http::empty_body> h;
+
         protocol::TMHello hello;
 
         // TODO initialize to some val
