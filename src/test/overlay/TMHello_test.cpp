@@ -86,7 +86,7 @@ public:
 
         // TODO initialize to some val
         SecretKey sk = generateSecretKey(KeyType::secp256k1, generateSeed ("masterpassphrase"));
-        PublicKey pk = derivePublicKey(KeyType::secp256k1, secretKey);
+        PublicKey pk = derivePublicKey(KeyType::secp256k1, sk);
 
 
         uint256 shared = beast::zero;
