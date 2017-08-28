@@ -80,7 +80,7 @@ public:
     void
     test_appendHello()
     {
-        // beast::http::request<beast::http::empty_body> h;
+        beast::http::request<beast::http::empty_body> h;
 
         protocol::TMHello hello;
 
@@ -97,7 +97,12 @@ public:
                 TokenType::TOKEN_NODE_PUBLIC,
                 pk));
         hello.set_nodeproof (sig.data(), sig.size());
-        BEAST_EXPECT(1);
+        appendHello(h, hello);
+
+        auto const iter = h.find ("Session-Signature");
+        if (iter == h.end())
+            BEAST_EXPECT(0)
+        BEAST_EXPECT((iter->value().to_string == "masterpassphrase"));
 
 
     // h.set_protoversion (to_packed (BuildInfo::getCurrentProtocol()));
