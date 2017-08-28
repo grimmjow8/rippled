@@ -24,6 +24,15 @@
 #include <ripple/protocol/PublicKey.h>
 #include <ripple/protocol/SecretKey.h>
 
+#include <ripple/crypto/csprng.h>
+#include <ripple/protocol/Seed.h>
+#include <ripple/beast/utility/rngfill.h>
+#include <algorithm>
+#include <string>
+#include <vector>
+#include <ripple/protocol/impl/secp256k1.h>
+
+
 namespace ripple {
 
 class TMHello_test : public beast::unit_test::suite
@@ -76,8 +85,10 @@ public:
         protocol::TMHello hello;
 
         // TODO initialize to some val
-        PublicKey pk;
-        SecretKey sk;
+        SecretKey sk = generateSecretKey(KeyType::secp256k1, generateSeed ("masterpassphrase"));
+        PublicKey pk = derivePublicKey(KeyType::secp256k1, secretKey);
+
+
         uint256 shared = beast::zero;
 
         auto const sig = signDigest (pk, sk, shared);
