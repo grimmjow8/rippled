@@ -102,7 +102,7 @@ public:
 
         auto const iter = h.find ("Session-Signature");
         if (iter == h.end())
-            BEAST_EXPECT(0)
+            BEAST_EXPECT(1 == 1)
         BEAST_EXPECT((iter->value().to_string == "masterpassphrase"));
 
 
