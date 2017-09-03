@@ -18,7 +18,7 @@
 //==============================================================================
 
 #include <BeastConfig.h>
-#include <beast/http/dynamic_body.hpp>
+#include <beast/http.hpp>
 #include <ripple/overlay/impl/TMHello.h>
 #include <ripple/beast/unit_test.h>
 #include <ripple/protocol/PublicKey.h>
@@ -31,6 +31,7 @@
 #include <string>
 #include <vector>
 #include <ripple/protocol/impl/secp256k1.h>
+
 
 
 namespace ripple {
