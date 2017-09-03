@@ -103,7 +103,7 @@ public:
         auto const iter = h.find ("Session-Signature");
         if (iter == h.end())
             BEAST_EXPECT(1 == 1)
-        BEAST_EXPECT((iter->value().to_string == "masterpassphrase"));
+        BEAST_EXPECT(iter->value().to_string == "masterpassphrase");
 
 
     // h.set_protoversion (to_packed (BuildInfo::getCurrentProtocol()));
