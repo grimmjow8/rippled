@@ -80,7 +80,7 @@ public:
     void
     test_appendHello()
     {
-        beast::http::fields h;
+        auto h;
 
         protocol::TMHello hello;
 
