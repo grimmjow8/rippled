@@ -80,7 +80,7 @@ public:
     void
     test_appendHello()
     {
-        auto h;
+        http::request<http::empty_body> h;
 
         protocol::TMHello hello;
 
