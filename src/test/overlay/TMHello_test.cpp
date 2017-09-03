@@ -81,7 +81,7 @@ public:
     void
     test_appendHello()
     {
-        http::request<http::empty_body> h;
+        beast::http::response<beast::http::dynamic_body> h;
 
         protocol::TMHello hello;
 
