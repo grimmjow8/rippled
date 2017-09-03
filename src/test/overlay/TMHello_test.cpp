@@ -80,7 +80,7 @@ public:
     void
     test_appendHello()
     {
-        beast::http::request<beast::http::empty_body> h;
+        beast::http::fields h;
 
         protocol::TMHello hello;
 
