@@ -81,12 +81,14 @@ public:
     void
     test_appendHello()
     {
+        testcase ("TMHello_test appendHello()");
         beast::http::response<beast::http::dynamic_body> h;
 
         protocol::TMHello hello;
 
         // TODO initialize to some val
-        SecretKey sk = generateSecretKey(KeyType::secp256k1, generateSeed ("masterpassphrase"));
+        auto const passphrase = "masterpassphrase";
+        SecretKey sk = generateSecretKey(KeyType::secp256k1, generateSeed (passphrase));
         PublicKey pk = derivePublicKey(KeyType::secp256k1, sk);
 
 
@@ -103,6 +105,24 @@ public:
         auto const iter = h.find ("Session-Signature");
         if (iter == h.end())
             return;
+
+        //std::string sessionSig = iter->value().to_string();
+        auto const sessionSig = iter->value().to_string();
+        BEAST_EXPECT(sessionSig == passphrase);
+
+
+            //         std::string error;
+            // auto const expectedError =
+            //     "[validator_list_keys] config section is missing";
+            // try {
+            //     c.loadFromString (toLoad);
+            // } catch (std::runtime_error& e) {
+            //     error = e.what();
+            // }
+            // BEAST_EXPECT(error == expectedError);
+
+
+
             //BEAST_EXPECT(1 == 1)
       //  BEAST_EXPECT("sdfsdf" == "Hello, world!");
 
