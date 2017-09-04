@@ -102,9 +102,9 @@ public:
 
         auto const iter = h.find ("Session-Signature");
         if (iter == h.end())
-            return
+            return;
             //BEAST_EXPECT(1 == 1)
-        BEAST_EXPECT("sdfsdf" == "Hello, world!");
+      //  BEAST_EXPECT("sdfsdf" == "Hello, world!");
 
    //     BEAST_EXPECT(iter->value().to_string() == "masterpassphrase");
 
