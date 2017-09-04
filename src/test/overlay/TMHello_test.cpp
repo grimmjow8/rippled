@@ -81,7 +81,7 @@ public:
     void
     test_appendHello()
     {
-        testcase ("TMHello_test appendHello()");
+
         beast::http::response<beast::http::dynamic_body> h;
 
         protocol::TMHello hello;
@@ -108,6 +108,7 @@ public:
 
         //std::string sessionSig = iter->value().to_string();
         auto const sessionSig = iter->value().to_string();
+        testcase (sessionSig);
         BEAST_EXPECT(sessionSig == passphrase);
 
 
