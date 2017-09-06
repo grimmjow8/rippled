@@ -109,7 +109,9 @@ public:
         //std::string sessionSig = iter->value().to_string();
         auto const sessionSig = iter->value().to_string();
         testcase (sessionSig);
-        BEAST_EXPECT(sessionSig == passphrase);
+        testcase ("-------------");
+        testcase (hello.nodeproof());
+        BEAST_EXPECT(sessionSig == hello.nodeproof());
 
 
             //         std::string error;
